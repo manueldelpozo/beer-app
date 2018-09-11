@@ -1,0 +1,18 @@
+:host :hover {
+    cursor: pointer;
+}
+
+mat-card {
+    display: flex;
+    align-items: center;
+    overflow: overlay;
+    height: 10.5em;
+    margin: .8em;
+    padding: 1.5em;
+}
+
+img {
+    height: 7em;
+    width: auto;
+    margin: 0
+}

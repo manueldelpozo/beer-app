@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{ data.selectedBeer.name }}</h1>
+<mat-dialog-content>
+  <div class="card row">
+    <div class="col-md-3 img-container">
+      <img src="{{ data.selectedBeer.image_url }}" alt="Photo of {{ data.selectedBeer.name }}" />
+    </div>
+    <div class="card-body col-md-9">
+      <h5 class="card-title">{{ data.selectedBeer.tagline }}</h5>
+      <p class="card-text">{{ data.selectedBeer.description }}</p>
+      <p class="card-text" *ngIf="data.selectedBeer.brewer_tips">Brewer tips: {{ data.selectedBeer.brewer_tips }}</p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning " [ngStyle]="{'width.vh': data.selectedBeer.ibu}">IBU: {{ data.selectedBeer.ibu }}</div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info " [ngStyle]="{'width.vh': data.selectedBeer.abv}">ABV: {{ data.selectedBeer.abv }}%</div>
+      </div>
+    </div>
+  </div>
+  <div id="similarBeersContainer">
+    <div id="spinnerContainer" *ngIf="isLoading; else elseBlock">
+      <mat-spinner></mat-spinner>
+      <h5>Searching similar beers...</h5>
+    </div>
+    <ng-template #elseBlock>
+      <div class="row">
+        <div *ngFor="let beer of similarBeers" class="col-md-6">
+          <app-beer-list-card [beer]="[ beer ]"></app-beer-list-card>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</mat-dialog-content>

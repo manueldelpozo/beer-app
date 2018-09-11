@@ -1,0 +1,10 @@
+#logo {
+    height: 80%;
+    width: auto;
+    margin: 1em;
+}
+
+mat-toolbar {
+    background-color: darkslategrey;
+    color: #ffffff;
+}

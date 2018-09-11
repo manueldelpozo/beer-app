@@ -1,0 +1,27 @@
+.card {
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img {
+    height: 45vh;
+    padding: 2em;
+}
+
+.progress {
+    margin-bottom: 1em;
+}
+
+.progress-bar {
+    color: #000000;
+}
+
+#spinnerContainer {
+    display: flex;
+    justify-content: center;
+}

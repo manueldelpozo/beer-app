@@ -1,0 +1,8 @@
+<mat-card [class.mat-elevation-z2]="!isActive" [class.mat-elevation-z8]="isActive" (mouseover)="isActive = true" (mouseout)="isActive = false" (click)="openDialog()">
+  <img src="{{ beerDetails.image_url }}" alt="Photo of {{ beerDetails.name }}">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ beerDetails.name }}</mat-card-title>
+    <mat-card-subtitle>{{ beerDetails.tagline }}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
