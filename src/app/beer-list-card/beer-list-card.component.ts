@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { BeerPopupDetailsComponent } from '../beer-popup-details/beer-popup-details.component';
 import { ActivatedRoute } from '@angular/router';
+import { Beer } from '../model/beer';
 
 @Component({
   selector: 'app-beer-list-card',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class BeerListCardComponent implements OnInit {
   @Input() beer: any[];
-  beerDetails: any = {};
+  beerDetails: Beer;
   isActive = false;
 
   constructor(public dialog: MatDialog, private activeRoute: ActivatedRoute) {}

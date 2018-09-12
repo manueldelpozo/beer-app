@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { BeerListService } from '../beer-list.service';
+import { Beer } from '../model/beer';
 
 @Component({
   selector: 'app-beer-popup-details',
@@ -8,7 +9,7 @@ import { BeerListService } from '../beer-list.service';
   styleUrls: ['./beer-popup-details.component.css']
 })
 export class BeerPopupDetailsComponent implements OnInit {
-  similarBeers: any[];
+  similarBeers: Beer[];
   numSimilarBeers = 3;
   difference = 2;
   isLoading = true;
